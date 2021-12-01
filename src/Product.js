@@ -1,7 +1,6 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
-import {db} from './Firebase'
 
 
 function Product({ id, title, image, rating, price }) {
@@ -21,13 +20,6 @@ function Product({ id, title, image, rating, price }) {
       },
       
     });
-    db.collection("Cart Products").add({
-      id: id,
-      title: title,
-      image: image,
-      price: price,
-      rating: rating,
-    })
   };
   return (
     <div className="product">
